@@ -58,9 +58,9 @@ public class LeshanClientDemo {
 
     private static final Logger LOG = LoggerFactory.getLogger(LeshanClientDemo.class);
 
-    private final static String[] modelPaths = new String[] { "3303.xml" };
+    private final static String[] modelPaths = new String[] { "ParkingSpot.xml" };
 
-    private static final int OBJECT_ID_TEMPERATURE_SENSOR = 3303;
+    private static final int OBJECT_ID_PARKING_SPOT = 32700;
     private final static String DEFAULT_ENDPOINT = "LeshanClientDemo";
     private final static String USAGE = "java -jar leshan-client-demo.jar [OPTION]\n\n";
 
@@ -68,8 +68,9 @@ public class LeshanClientDemo {
 
     public static void main(final String[] args) {
     	
-    	SQLDb obj = new SQLDb();
-        obj.createConnection();
+    	/* MY SQL Database */
+    	//SQLDb obj = new SQLDb();
+        //obj.createConnection();
         
         // Define options for command line tools
         Options options = new Options();
@@ -364,9 +365,9 @@ public class LeshanClientDemo {
         }
         initializer.setClassForObject(DEVICE, MyDevice.class);
         initializer.setInstancesForObject(LOCATION, locationInstance);
-        initializer.setInstancesForObject(OBJECT_ID_TEMPERATURE_SENSOR, new RandomTemperatureSensor());
+        initializer.setInstancesForObject(OBJECT_ID_PARKING_SPOT, new ParkingSpot());
         List<LwM2mObjectEnabler> enablers = initializer.create(SECURITY, SERVER, DEVICE, LOCATION,
-                OBJECT_ID_TEMPERATURE_SENSOR);
+        		OBJECT_ID_PARKING_SPOT);
 
         // Create CoAP Config
         NetworkConfig coapConfig;

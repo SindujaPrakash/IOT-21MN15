@@ -114,7 +114,8 @@ public class LeshanServerDemo {
                             "LWM2M_Bearer_selection-v1_0.xml", "LWM2M_Portfolio-v1_0.xml", "LWM2M_DevCapMgmt-v1_0.xml",
                             "LWM2M_Software_Component-v1_0.xml", "LWM2M_Software_Management-v1_0.xml",
 
-                            "Non-Access_Stratum_NAS_configuration-V1_0.xml" };
+                            "Non-Access_Stratum_NAS_configuration-V1_0.xml",
+                            "ParkingSpot.xml"};
 
     private final static String USAGE = "java -jar leshan-server-demo.jar [OPTION]\n\n";
 
@@ -430,6 +431,7 @@ public class LeshanServerDemo {
         server.start();
         LOG.info("Web server started at {}.", server.getURI());
         
+        /*  Database Creation */
         //SQLAccess obj = new SQLAccess();
         //obj.createConnection();
     }

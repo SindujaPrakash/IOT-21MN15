@@ -71,6 +71,7 @@ lwClientControllers.controller('ClientListCtrl', [
                     tooltip = tooltip + "<hr/>" + additionals.join("<br/>");
                 }
             }
+            console.log(client);
             return tooltip;
         };
 
@@ -80,6 +81,7 @@ lwClientControllers.controller('ClientListCtrl', [
             console.error($scope.error);
         }).success(function(data, status, headers, config) {
             $scope.clients = data;
+            console.log(data);
 
             // HACK : we can not use ng-if="clients"
             // because of https://github.com/angular/angular.js/issues/3969
